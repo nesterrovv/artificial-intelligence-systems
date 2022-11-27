@@ -25,7 +25,6 @@ public class Tester {
         int TP = 0, TN = 0, FP = 0, FN = 0;
         for (DataObject object : testData.getObjects()) {
             int predictedClass = getTreeClassPrediction(treeRoot, object);
-
             if (predictedClass == object.getDataClassID()) {
                 if (predictedClass == keyClass) TP++;
                 else TN++;
@@ -68,7 +67,7 @@ public class Tester {
                                     .orElse(null));
         }
     if(node != null) return node.getClassLabel();
-    else throw new UnknownClassException("Ooops");
+    else throw new UnknownClassException("Unknown class.");
     }
 
 }
